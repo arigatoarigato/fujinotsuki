@@ -1,0 +1,54 @@
+/* hide_A */
+/* スクロールで消える */
+.header.typeA{
+  transition: 1s;
+  height: 100%;
+  overflow: hidden;
+}
+.header.typeA.hide {
+  transform: translateY(-100%);
+}
+
+/* hide_B */
+/* スクロールでロゴの下半分が消える */
+.header.typeB{
+  transition: 1s;
+  height: 100%;
+  overflow: hidden;
+}
+.header.typeB.hide {
+  height: 55%;
+}
+.header.typeB nav,
+.header.typeB .weather {
+  transition: 1s;
+}
+.header.typeB.hide nav,
+.header.typeB.hide .weather {
+  transform: translateY(-25px)
+}
+
+/* hide_C */
+/* スクロールでロゴが縮小される */
+.header.typeC{
+  transition: 1s;
+  height: 100%;
+  overflow: hidden;
+}
+.header.typeC.hide {
+  height: 50%;
+}
+.header.typeC nav,
+.header.typeC .weather {
+  transition: 1s;
+}
+.header.typeC.hide nav,
+.header.typeC.hide .weather {
+  transform: translateY(-30px)
+}
+.header.typeC h1 img {
+  transition: 1s;
+}
+.header.typeC.hide h1 img {
+  transform: translateY(-25%) scale(.5);
+}*/

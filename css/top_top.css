@@ -1,0 +1,1418 @@
+@charset 'utf-8';
+
+/*12/10(木) 
+大まかなレイアウトを組みました。 
+それぞれの領域を可視化するために、背景色を入れています。 
+画像や領域のサイズは仮置きなので、適宜編集していきます。 */
+
+
+/*12/11(金)　杉野　画像のパスを書き直しました*/
+
+/*12/14(月)　グリッドレイアウトのトラックサイズを決定し、反映させました*/
+
+/*12/15(火)　進藤さんにコードチェックをしてもらい、全体的に修正しました*/
+
+/*01/22(金) レスポンス周りの確認（進藤）*/
+
+/*01/25(月)　動画をvideoタグで搭載し、自動再生させています（杉野）*/
+
+
+* {
+	margin: 0;
+	padding: 0;
+
+	/*	さわらび明朝*/
+	/*	font-family: 'Sawarabi Mincho', sans-serif;*/
+
+	/*さわらびゴシック*/
+	font-family: 'Sawarabi Gothic', sans-serif;
+	color: #555;
+}
+
+html {
+	font-size: 62.5%;
+	/*	width: 100vw;*/
+}
+
+body {
+	/*	overflow-x: hidden;*/
+	font-size: 1.6em;
+	/*16px*/
+	line-height: 2;
+	background-image: url(../image/01top/washi1.jpg);
+	display: grid;
+	/*	grid-template-rows: repeat(auto, 5);*/
+	grid-template-rows: repeat(5, auto);
+}
+
+/*------------------------------------------*/
+/*------------------------------------------*/
+/*ここから　ヘッダー*/
+/*------------------------------------------*/
+/*------------------------------------------*/
+
+.header {
+	/*	background-color: antiquewhite;*/
+
+	/*グリッド：ヘッダー*/
+	grid-row: 1;
+	height: 100vh;
+
+	display: grid;
+	grid-template-rows: 10% auto;
+	grid-template-columns: auto auto;
+}
+
+/*動画の大枠レイアウト位置*/
+.movie {
+	/*	グリッド*/
+	grid-row: 1/-1;
+	grid-column: 1/-1;
+	display: grid;
+	/* ↓↓計95%：要確認 */
+	grid-template-rows: 20% 30% 50%;
+	grid-template-columns: 1fr 35% 1fr;
+	height: 100vh;
+}
+
+/*動画用の参考画像*/
+/*.movie-sankou {*/
+/* heightどっち？？（有効なのは下段） */
+/*	height: auto;*/
+/*	height: 100vh;*/
+/*	width: 100vw;*/
+/*	object-fit: cover;*/
+
+/*	グリッド*/
+/*	grid-row: 1/-1;*/
+/*	grid-column: 1/-1;*/
+/*}*/
+
+/*ファーストビュー：動画*/
+video {
+	/*	グリッド*/
+	grid-row: 1/-1;
+	grid-column: 1/-1;
+	width: 100%;
+	height: 100vh;
+	object-fit: cover;
+	z-index: -100;
+}
+
+/*ファーストビュー：ロゴ*/
+.movie h2 {
+	display: flex;
+	justify-content: center;
+
+	/*	グリッド*/
+	grid-row: 2;
+	grid-column: 2;
+}
+
+/*
+.fv_logo {
+	width: 50%;
+}
+*/
+
+/*ファーストビュー：キャッチコピー*/
+.phrase {
+	grid-row: 3;
+	grid-column: 2;
+	color: white;
+	font-weight: bold;
+	font-size: 1.3em;
+	writing-mode: vertical-rl;
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+	color: #fff;
+}
+
+.phrase p {
+	color: #fff;
+}
+
+/*ファーストビュー：右上ボタン*/
+.btn {
+	grid-row: 1;
+	grid-column: 2/3;
+	display: grid;
+	grid-template-columns: 1fr 20% 20%;
+}
+
+/*ファーストビュー：右上ボタン*/
+/*インスタグラムアイコンのグリッド位置*/
+.btn :nth-child(1) img {
+	grid-column: 2;
+}
+
+/*ファーストビュー：右上ボタン*/
+/*ハンバーガーメニューのアイコン*/
+.btn :nth-child(2) img {
+	/*グリッド*/
+	grid-column: 3;
+}
+
+
+/*ここまで　ヘッダー*/
+
+
+
+/*------------------------------------------*/
+/*------------------------------------------*/
+/*ここから　グローバルナビゲーション*/
+/*------------------------------------------*/
+/*------------------------------------------*/
+
+.global-nav {
+	/*スクロールしたときに、
+グローバルナビゲーションだけ
+ブラウザトップに固定しています。*/
+	position: sticky;
+	top: 0;
+	/*	width: 100vw;*/
+	z-index: 100;
+	background-color: #e7bfcd;
+
+	/*グリッド*/
+	grid-row: 2;
+}
+
+/*ナビ項目・ロゴ・天気情報の大枠*/
+nav .wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
+
+	/*	グリッド*/
+	display: grid;
+	grid-template-columns: 1fr 10px 40% 10px 1fr;
+	align-items: center;
+	justify-items: center;
+}
+
+/*グローバルナビゲーション*/
+/*言語*/
+.langage {
+	grid-row: 3;
+	justify-self: end;
+	margin-bottom: 8px;
+}
+
+.langage p {
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+.langage a {
+	display: inline-block;
+	max-width: 180px;
+	text-align: left;
+	/* background-color: #ffec47;*/
+	background-color: #f8b62d;
+	/* font-size: 1.1em;*/
+	color: #666;
+	text-decoration: none;
+	font-weight: bold;
+	border-radius: 50px;
+	padding-right: 5px;
+	padding-left: 5px;
+	border-bottom: 3px solid #6e5115;
+	border-right: 3px solid #6e5115;
+	text-decoration-line: none;
+}
+
+/*切り替え後の言語*/
+.langage:active {
+	transform: translateY(4px);
+	border-bottom: none;
+}
+
+.langage2 a {
+	display: inline-block;
+	max-width: 180px;
+	text-align: left;
+	/* background-color: #ffec47;*/
+	background-color: #f8b62d;
+	font-size: 1.2em;
+	color: #777;
+	text-decoration: none;
+	font-weight: bold;
+	border-radius: 50px;
+	padding-right: 10px;
+	padding-left: 10px;
+	border-bottom: 4px solid #6e5115;
+	border-right: 4px solid #6e5115;
+	text-decoration-line: none;
+}
+
+.langage2:active {
+	transform: translateY(4px);
+	border-bottom: none;
+}
+
+/*ロゴ*/
+.global-nav_logo {
+	/*	グリッド*/
+	grid-column: 3;
+	grid-row: 1;
+}
+
+.global-nav_logo h1 {
+	height: 100%;
+}
+
+.global-nav_logo a {
+	display: block;
+	text-align: center;
+}
+
+.global-nav_logo img {
+	height: 70%;
+	width: 70%;
+}
+
+
+/*グローバルナビゲーション*/
+/*ナビ各項目*/
+.global-nav ul {
+	list-style-type: none;
+
+	/*	グリッド*/
+	grid-column: 1;
+	grid-row: 1;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: 1fr;
+	height: 100%;
+	align-items: center;
+}
+
+/*ナビ項目：①エリアマップ*/
+.map {
+	grid-column: 1;
+}
+
+/*ナビ項目：②観光地*/
+.spot {
+	grid-column: 2;
+}
+
+/*ナビ項目：③特産品*/
+.tokusan {
+	grid-column: 3;
+}
+
+/*ナビ項目：④オンラインショップ*/
+.shop {
+	grid-column: 4;
+}
+
+img {
+	width: 100%;
+	height: 100%;
+}
+
+a {
+	display: block;
+}
+
+
+/*グローバルナビゲーション*/
+/*天気情報*/
+.weather {
+	grid-row: 1;
+	justify-self: end;
+	margin-top: 10px;
+	width: 100%;
+}
+
+.weather img {
+	width: 100%;
+	height: 100%;
+}
+
+.header_sub {
+	width: 100%;
+	grid-column: 5;
+	display: grid;
+	grid-template-rows: auto 8px auto;
+
+}
+
+/*ここまで　グローバルナビゲーション*/
+
+
+/*------------------------------------------*/
+/*------------------------------------------*/
+/*メイン　ここから*/
+/*------------------------------------------*/
+/*------------------------------------------*/
+
+main {
+	background-color: #fff;
+	padding: 50px;
+	border: inset 30px #e7bfcd;
+	border-radius: 20px;
+}
+
+.main {
+	grid-row: 3;
+	max-width: 1200px;
+	margin: 100px auto;
+}
+
+/*メイン：お知らせ*/
+.news {
+	grid-row: 3;
+	grid-column: 1/-1;
+}
+
+
+
+/*ここから　井出氏のコピペ↓*/
+
+/* 全体 */
+section {
+	max-width: 1000px;
+	/* margin: auto; */
+}
+
+/* slick 矢印 */
+.slick-arrow {
+	border-radius: 50%;
+	text-align: center;
+	width: 3rem;
+	line-height: 3rem;
+	font-size: 1rem;
+	background-color: #555;
+	color: #fff;
+	position: absolute;
+	top: 40%;
+	z-index: 10;
+	cursor: pointer;
+}
+
+.slick-arrow.prev {
+	left: -30px;
+}
+
+.slick-arrow.next {
+	right: -30px;
+}
+
+/* slick ドット */
+.slide-dots {
+	list-style-type: none;
+	display: flex;
+	justify-content: center;
+}
+
+.slide-dots button {
+	border-radius: 50%;
+	width: 1rem;
+	height: 1rem;
+	margin: .5rem;
+	padding: 0;
+	text-indent: -999px;
+	overflow: hidden;
+	background-color: #fff;
+	cursor: pointer;
+}
+
+.slide-dots .slick-active button {
+	background-color: #999;
+}
+
+.slick {
+	width: 100%;
+}
+
+.slick img {
+	width: 100%;
+	max-height: 500px;
+	object-fit: contain;
+}
+
+.box {
+	margin: 1rem;
+	height: 360px;
+	max-height: 600px;
+	/*	background-color: #fff;*/
+	/*	border: 1px solid #000;*/
+	/*	box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, .5);*/
+	transition: .5s;
+	overflow: hidden;
+}
+
+.box:hover {
+	transform: translateY(-10px);
+	/*	box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, .3);*/
+}
+
+
+
+.box a {
+	text-decoration: none;
+	color: #000;
+	font-size: 1.2rem;
+	/*	font-weight: 600;*/
+	/*（杉野）*/
+}
+
+.box p {
+	display: block;
+	/*		height: 10rem;*/
+	/*	padding: 1rem;*/
+	/*	background-color: #fcc;*/
+	font-size: 1.4em;
+	line-height: 1.5em;
+	padding-top: 7px;
+}
+
+.box img {
+	/*  object-fit: cover;*/
+	border-radius: 10px;
+	box-shadow: 7px 7px 7px 5px rgba(202, 148, 148, 0.4);
+}
+
+/* マージンとるやつ（コピペ） */
+/* the slides */
+.slick-slide {
+	margin: 0 1rem;
+}
+
+/* the parent */
+.slick-list {
+	/*      margin: 0 1rem; */
+	/*      margin-left: -2rem;*/
+}
+
+.slick-track {
+	margin-left: -1rem;
+	height: 300px;
+	/*（杉野）*/
+}
+
+/* （コピペここまで） */
+/*ここまで　井出氏のコピペ↑*/
+
+/*メイン　ここまで*/
+
+
+
+
+
+/*------------------------------------------*/
+/*------------------------------------------*/
+/*ここから　アサイド*/
+/*------------------------------------------*/
+/*------------------------------------------*/
+
+aside {
+	max-width: 1200px;
+	margin: 0 auto;
+	margin-top: 100px;
+
+	/*グリッド：アサイド*/
+	grid-row: 4;
+	grid-column: 1/-1;
+	display: grid;
+	grid-template-rows: auto 100px auto;
+	grid-template-columns: 5fr 2fr 5fr;
+}
+
+/*インスタグラム埋め込み*/
+.instagram {
+	/*	グリッド*/
+	grid-row: 1;
+	grid-column: 1;
+	justify-items: center;
+	/*	align-items: center;*/
+	height: 100%;
+	overflow: hidden;
+	margin: 0 auto;
+	width: 100%;
+}
+
+/*仮置きのインスタ画像*/
+/*
+.instagram img {
+	height: 550px;
+	margin: 0 auto;
+	width: 500px;
+}*/
+
+
+/*ここから　バナー*/
+
+/*バナー：全体枠*/
+.bnr {
+	/*	グリッド*/
+	grid-row: 1;
+	grid-column: 3;
+	display: grid;
+	grid-template-rows: auto auto;
+	grid-template-columns: 150px 1fr 1fr;
+	/*	grid-row-gap: 15px;*/
+}
+
+/*バナー：縦長グループ*/
+.bnr_a {
+	/*	グリッド*/
+	grid-row: 1;
+	grid-column: 1/-1;
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 20px;
+	/*	align-self: center;*/
+	justify-self: center;
+	margin-bottom: 20px;
+}
+
+.bnr01,
+.bnr02 {
+	width: 200px;
+	height: 250px;
+}
+
+/*バナー：横長グループ*/
+.bnr_b {
+	/*	グリッド*/
+	grid-row: 2;
+	grid-column: 1/-1;
+	display: grid;
+	grid-template-rows: repeat(5, 1fr);
+	grid-template-columns: 1fr 1fr;
+	grid-row-gap: 20px;
+	grid-column-gap: 20px;
+	/*	align-self: center;*/
+	justify-self: center;
+	/* grid-column-gap: 20px; */
+	/* grid-column-gap: 20px; */
+}
+
+/*
+bnr
+	align-self: center;
+	justify-self: center;
+}
+*/
+
+
+.bnr03,
+.bnr04,
+.bnr05,
+.bnr06,
+.bnr07,
+.bnr08,
+.bnr09,
+.bnr10,
+.bnr11 {
+	width: 200px;
+	height: 50px;
+}
+
+
+/*ここから　交通アクセス*/
+.access {
+	grid-row: 3;
+	grid-column: 1/-1;
+
+	/*    グリッド：交通アクセス*/
+	display: grid;
+	grid-template-rows: auto auto;
+	grid-template-columns: 60% 10% 35%;
+	/*	margin-top: 100px;*/
+	margin-bottom: 100px;
+
+}
+
+/*
+.access a {
+	margin-left: 20px;
+}
+*/
+
+
+
+
+/*交通アクセス：詳細文の大枠*/
+.access-ways {
+	/*	グリッド*/
+	grid-row: 2;
+	grid-column: 3;
+	display: grid;
+	grid-template-rows: repeat(3, auto);
+	grid-row-gap: 30px;
+}
+
+/*交通アクセス：見出し（access map）*/
+.access h2 {
+	grid-row: 1;
+	grid-column: 1/-1;
+	/*	text-align: center;*/
+	margin-bottom: 20px;
+	font-size: 2em;
+}
+
+/*google map*/
+.google-map {
+	/*	position: relative;*/
+	width: 100%;
+	overflow: hidden;
+	/*	height: 350px;*/
+	height: 500px;
+}
+
+.google-map iframe {
+	width: 1000px;
+	height: 667px;
+}
+
+/*font awesome設定*/
+/*アイコン：車*/
+.car_icon::before {
+	font-family: "Font Awesome 5 Free";
+	content: '\f5e4';
+	font-weight: 900;
+	font-size: 1.2em;
+	/*菜の花色*/
+	/*	color: #ffec47;*/
+}
+
+.access-ways span {
+	display: inline-block;
+}
+
+/*アイコン：バス*/
+.train_icon::before {
+	font-family: "Font Awesome 5 Free";
+	content: '\f238';
+	font-weight: 900;
+	font-size: 1.2em;
+	/*菜の花色*/
+	/*	color: #ffec47;*/
+}
+
+/*アイコン：飛行機*/
+.airplane_icon::before {
+	font-family: "Font Awesome 5 Free";
+	content: '\f072';
+	font-weight: 900;
+	font-size: 1.2em;
+}
+
+/*交通アクセス：詳細文*/
+
+.by {
+	font-weight: bold;
+	font-size: 1.5em;
+
+	/*	グリッド*/
+	grid-column: 3;
+}
+
+/*車でのアクセス方法*/
+.access-car {
+	grid-row: 1;
+}
+
+.car_list li {
+	/*	list-style: circle inside;*/
+	font-size: 1.3em;
+}
+
+/*公共交通機関でのアクセス方法*/
+.access-public {
+	/*	グリッド*/
+	grid-row: 2;
+}
+
+.train_list li {
+	font-size: 1.3em;
+}
+
+/*飛行機でのアクセス方法*/
+.access-airplane {
+	grid-row: 3;
+}
+
+/*アサイド　ここまで
+
+
+/*------------------------------------------*/
+/*------------------------------------------*/
+/*フッター　ここから*/
+/*------------------------------------------*/
+/*------------------------------------------*/
+
+/*ここから　common.cssをコピペ（編集済み）*/
+/*
+footer {
+	background-color: #e7bfcd;
+}
+*/
+
+footer {
+	grid-row: 3;
+	background-color: rgba(204, 126, 177, 0.44);
+	padding: 15px;
+	color: #555;
+}
+
+/*フッター*/
+footer.footer {
+	grid-row: 5;
+	/*	background-color: rgba(204, 126, 177, 0.44);*/
+}
+
+/*
+footer .wrapper {
+	display: grid;
+	grid-template-columns: 1fr auto auto auto 1fr;
+	grid-template-rows: repeat(2, auto);
+	grid-column-gap: 70px;
+	grid-row-gap: 20px;
+	justify-items: center;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+*/
+
+/*フッター：大枠*/
+footer .wrapper {
+	display: grid;
+	grid-template-columns: 1fr auto auto auto 1fr;
+	grid-template-rows: repeat(2, auto);
+	grid-column-gap: 60px;
+	grid-row-gap: 10px;
+	justify-items: center;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+/*
+.footer_icon {
+	grid-column: 1/-1;
+	grid-row: 1;
+	margin-bottom: 10px;
+	text-align: center;
+	margin: 0;
+}
+*/
+
+/*フッター：リンク*/
+footer a {
+	color: #555;
+}
+
+/*
+.footer_icon img {
+	height: 70%;
+	width: 70%;
+}
+*/
+
+/*フッターのキャッチコピー*/
+.footer_text {
+	grid-column: 2/3;
+	grid-row: 1;
+	/*
+	font-size: 1.2em;
+	font-weight: bold;
+	color: darkmagenta;
+*/
+}
+
+/*フッター：藤月町観光協会*/
+.footer_text h3 {
+	padding-bottom: 2px;
+	margin-bottom: 10px;
+	border-bottom: solid 2px;
+}
+
+
+/*フッター：協会関連情報*/
+.footer_address {
+	grid-column: 3/4;
+	grid-row: 1;
+	word-break: keep-all;
+}
+
+.footer_address th {
+	padding-right: 10px;
+	text-align: left;
+}
+
+.footer_address tr {
+	margin: 20px 0;
+}
+
+/*フッターのサイトリンク*/
+.footer_site_link {
+	grid-column: 4/5;
+	grid-row: 1;
+}
+
+/*フッターのコピーライト*/
+.footer_copy {
+	grid-column: 2/5;
+	grid-row: 2;
+	text-align: center;
+}
+
+
+/*ここまで　common.cssをコピペ（編集済み）*/
+
+/*フッター　ここまで*/
+
+
+
+
+
+
+
+/*------------------------------------------*/
+/*------------------------------------------*/
+/*---------- レスポンシブWebデザイン ----------*/
+/*------------------------------------------*/
+/*------------------------------------------*/
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+/*【　ここから　ウィンドウ幅が最大767pxまでの場合　】*/
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+@media screen and (max-width: 768px) {
+
+	body {
+		display: grid;
+		/*		grid-template-rows: 1fr 1fr 1fr 1fr;*/
+		grid-template-rows: repeat(4, auto);
+		width: 100vw;
+	}
+
+	img {
+		width: 100%;
+	}
+
+	/*------------------------------------------*/
+	/*------------------------------------------*/
+	/*ここから　ヘッダー*/
+	/*------------------------------------------*/
+	/*------------------------------------------*/
+
+	.header {
+		grid-row: 1;
+		height: 40vh;
+		width: 100vw;
+		/*    	overflow: hidden;*/
+		display: block;
+
+	}
+
+	.movie {
+		height: 100%;
+		/*    grid-template-rows: 20% 30% 50%;*/
+		grid-template-rows: 1fr 35% 1fr;
+		grid-template-columns: 1fr 35% 1fr;
+	}
+
+	/*
+	ファーストビュー：動画　※参考画像
+	.movie-sankou {
+		object-fit: cover;
+		height: 100%;
+	}
+*/
+
+	video {
+		grid-row: 1/-1;
+		grid-column: 1/-1;
+		height: 100%;
+		width: 100%;
+	}
+
+	.phrase {
+		display: none;
+	}
+
+	/*	ここまで　ヘッダー*/
+
+
+	/*------------------------------------------*/
+	/*------------------------------------------*/
+	/*ここから　グローバルナビゲーション*/
+	/*------------------------------------------*/
+	/*------------------------------------------*/
+
+	.global-nav {
+		display: none;
+	}
+
+
+	/*
+			.header {
+					grid-row: 1;
+			}
+	*/
+
+	/*	ここまで　グローバルナビゲーション*/
+
+	/*------------------------------------------*/
+	/*------------------------------------------*/
+	/*ここから　メイン*/
+	/*------------------------------------------*/
+	/*------------------------------------------*/
+
+	.main {
+		grid-row: 2;
+		width: 100vw;
+		height: auto;
+
+		margin: 100px 0;
+		padding: 0;
+
+		border: none;
+		border-radius: 0;
+		background-color: transparent;
+
+	}
+
+	.main .slick-list,
+	.main .draggable {
+		height: auto;
+
+	}
+
+	.main .slick-track {
+		margin: 0;
+		height: auto;
+	}
+
+	.main .slick-slide img {
+		width: 70vw;
+		margin: 0 auto;
+	}
+
+	.slick-arrow.prev {
+		left: 60px;
+	}
+
+	.slick-arrow.next {
+		right: 60px;
+	}
+
+	.main .box {
+		margin-right: 0;
+		margin-left: 0;
+		margin-bottom: 0;
+		height: auto;
+	}
+
+	.box:hover {
+		box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, .3);
+	}
+
+	.box a {
+		font-size: 1rem;
+	}
+
+	.box p {
+		text-align: center;
+		/*		margin-top: 10px;*/
+		padding-top: 25px;
+	}
+
+	/*
+	.news_p {
+		display: grid;
+		grid-template-rows: 20px auto auto;
+		grid-template-columns: 1fr 70% 1fr;
+	}
+*/
+
+
+	/*ここまで　メイン*/
+
+
+	/*------------------------------------------*/
+	/*------------------------------------------*/
+	/*ここから　アサイド*/
+	/*------------------------------------------*/
+	/*------------------------------------------*/
+	.aside {
+		grid-row: 3;
+
+		display: grid;
+		/*		grid-template-rows: 1fr 1fr 1fr;*/
+		grid-template-rows: repeat(3, auto);
+		grid-template-columns: 1fr;
+		width: 95%;
+
+		margin: 0 auto;
+		margin-top: 50px;
+	}
+
+	/*インスタグラム埋め込みここから*/
+	.instagram {
+		grid-row: 1;
+		/*		overflow: visible;*/
+		/*		height: 1.5vw;*/
+	}
+
+	.instagram-media {
+		height: 500;
+		width: 100%;
+	}
+
+	/*バナーここから*/
+	.bnr {
+		grid-row: 2;
+		grid-column: 1;
+		/*		overflow: hidden;*/
+		object-fit: contain;
+		margin-top: 100px;
+		margin-bottom: 100px;
+
+	}
+
+	.bnr_a {
+		grid-row: 1;
+		grid-column: 1/-1;
+		display: grid;
+		grid-template-rows: 1fr;
+		grid-template-columns: 1fr 1fr;
+		grid-column-gap: 5px;
+		/*	align-self: center;*/
+		/*		justify-content: center;*/
+	}
+
+	.bnr_b {
+		grid-template-rows: repeat(5, 1fr);
+		grid-template-columns: 1fr 1fr;
+		grid-row-gap: 20px;
+		grid-column-gap: 5px;
+		/*	align-self: center;*/
+		justify-self: center;
+		/* grid-column-gap: 20px; */
+		/* grid-column-gap: 20px; */
+	}
+
+	.bnr_a a {
+		width: 95%;
+		justify-self: center;
+	}
+
+	.bnr_b a {
+		width: 95%;
+		justify-self: center;
+	}
+
+	.bnr01,
+	.bnr03,
+	.bnr02 {
+		width: 100%;
+		height: auto;
+	}
+
+	.bnr04,
+	.bnr13,
+	.bnr05,
+	.bnr06,
+	.bnr07,
+	.bnr08,
+	.bnr09,
+	/*.bnr10,*/
+	.bnr11,
+	.bnr12 {
+		width: 100%;
+		height: auto;
+	}
+
+	.bnr10 img {
+		width: 200px;
+		height: 50px;
+	}
+
+	.bnr04 img {
+		width: 400px;
+		height: 100px;
+	}
+
+
+	/*交通アクセスはここから*/
+	.access {
+		grid-row: 3;
+		/*		overflow: hidden;*/
+
+
+		grid-template-rows: repeat(3, auto);
+		grid-template-columns: 1fr;
+		margin-bottom: 50px;
+		margin-top: 50px;
+		margin-left: 40px;
+		margin-right: 40px;
+	}
+
+	.access p {
+		font-size: 1.5em;
+
+	}
+
+	.access h2 {
+		text-align: center;
+	}
+
+
+
+	.google-map {
+		grid-row: 2;
+		grid-column: 1;
+		object-fit: cover;
+	}
+
+	.access-ways {
+		grid-row: 3;
+		grid-column: 1;
+		margin: 0 atuo;
+
+	}
+
+
+	.access-car {
+		margin: 40px auto 0 auto;
+	}
+
+	.access-train {
+		margin: 40px auto 0 auto;
+	}
+
+
+	.car_list {
+		font-size: 1.2em;
+		margin: 0 20px 0 20px;
+	}
+
+	.train_list {
+		font-size: 1.2em;
+	}
+
+
+
+	/*ここまで　アサイド*/
+
+
+
+	/*------------------------------------------*/
+	/*------------------------------------------*/
+	/*ここから　フッター*/
+	/*------------------------------------------*/
+	/*------------------------------------------*/
+	/*	ここから　「ベース　決定」からコピペ*/
+	footer.footer .wrapper {
+		grid-column-gap: 0;
+		line-height: normal;
+
+	}
+
+	footer.footer .wrapper .footer_icon,
+	footer.footer .wrapper .footer_text,
+	footer.footer .wrapper .footer_site_link {
+		display: none;
+	}
+
+	footer.footer .wrapper .footer_adress,
+	footer.footer .wrapper .footer_copy {
+		font-size: 13px;
+		word-break: keep-all;
+		line-height: normal;
+	}
+
+	/*	ここまで　「ベース　決定」からコピペ*/
+
+	/*
+	.footer_address{
+		grid-row: 1;
+		grid-column: 3/4;
+		
+	}
+*/
+
+	.footer_adress {
+		grid-column: 3/4;
+		grid-row: 1;
+		word-break: keep-all;
+	}
+
+	/*
+	footer.footer {
+		grid-row: 4;
+		width: 100vw;
+	}
+*/
+
+
+	/*	footer .footer {*/
+	/*		grid-row: 5;*/
+	/*		width: 100vw;*/
+	/*	}*/
+
+
+	/*
+	footer.footer {
+	grid-row: 5;
+}
+*/
+
+	/*
+	footer .wrapper {
+		width: 100vw;
+		display: block;
+	}
+*/
+
+	/*ここまで　フッター*/
+
+}
+
+/*ここまで　レスポンシブWebデザイン*/
+
+/*【　ここまで　ウィンドウ幅が最大767pxまでの場合　】*/
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+/*【　ここから　ウィンドウ幅が最大480pxまでの場合　】*/
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+@media screen and (max-width: 480px) {
+
+	body {
+		grid-template-rows: 20vh auto auto auto;
+	}
+
+	/*------------------------------------------*/
+	/*------------------------------------------*/
+	/*ここから　ヘッダー*/
+	/*------------------------------------------*/
+	/*------------------------------------------*/
+
+	.header {
+		height: 33vh;
+		grid-row: 1;
+	}
+
+	/*------------------------------------------*/
+	/*------------------------------------------*/
+	/*ここまで　ヘッダー*/
+	/*------------------------------------------*/
+	/*------------------------------------------*/
+
+
+	/*------------------------------------------*/
+	/*------------------------------------------*/
+	/*ここから　メイン*/
+	/*------------------------------------------*/
+	/*------------------------------------------*/
+	.box p {
+		font-size: 1.2em;
+	}
+
+
+	.main {
+		grid-row: 2;
+	}
+
+	.slick {
+		margin-top: 30px;
+	}
+
+	.slick-arrow {
+		width: 2rem;
+		line-height: 2rem;
+	}
+
+	.slick-arrow.prev {
+		left: 10px;
+	}
+
+	.slick-arrow.next {
+		right: 10px;
+	}
+
+	/*------------------------------------------*/
+	/*------------------------------------------*/
+	/*ここまで　メイン*/
+	/*------------------------------------------*/
+	/*------------------------------------------*/
+
+	/*------------------------------------------*/
+	/*------------------------------------------*/
+	/*ここから　アサイド*/
+	/*------------------------------------------*/
+	/*------------------------------------------*/
+
+	.aside {
+		grid-row: 3;
+	}
+
+	width: 100%;
+	height: 70%;
+}
+
+.access {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.access h2 {
+	font-size: 1.3em;
+}
+
+.access p {
+	font-size: 1.2em;
+}
+
+.car_list {
+	font-size: .7em;
+}
+
+.train_list {
+	font-size: .7em;
+}
+
+/*------------------------------------------*/
+/*------------------------------------------*/
+/*ここまで　アサイド*/
+/*------------------------------------------*/
+/*------------------------------------------*/
+
+/*------------------------------------------*/
+/*------------------------------------------*/
+/*ここから　フッター*/
+/*------------------------------------------*/
+/*------------------------------------------*/
+
+.footer {
+	grid-row: 4;
+}
+
+/*------------------------------------------*/
+/*------------------------------------------*/
+/*ここまで　フッター*/
+/*------------------------------------------*/
+/*------------------------------------------*/
+
+
+
+
+
+
+/*【　ここまで　ウィンドウ幅が最大480pxまでの場合　】*/
+
+
+}

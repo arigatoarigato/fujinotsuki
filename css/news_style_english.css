@@ -1,0 +1,397 @@
+@charset "utf-8";
+
+body {
+    background-image: url(../image/06news/washi1.jpg);
+}
+
+
+.wf-sawarabimincho {
+    font-family: "Sawarabi Mincho";
+}
+
+main {
+    width: 100vw;
+    margin: 0 auto;
+    padding-bottom: auto +30px;
+
+}
+
+main #orchard01 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: left space-evenly;
+    flex: auto;
+}
+
+figure {
+    width: 50%;
+    padding: 30px;
+}
+
+figure img {
+    width: 100%;
+}
+
+
+.slideshow ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 30px;
+    max-width: 100%;
+    width: 100%;
+}
+
+.slideshow ul li img {
+    /*    width: 100%;*/
+    box-shadow: 10px 5px 10px 1px #ccc;
+
+}
+
+ul.slick-dots {
+    margin-bottom: -4em;
+}
+
+.slick-dots li {
+    width: 15%;
+    height: 15%;
+    opacity: 0.3;
+}
+
+.slick-dots li.slick-active {
+    opacity: 1;
+}
+
+.slideshow p {
+    margin: 5px 0;
+    padding: 0;
+    text-align: center;
+    color: #eee;
+}
+
+article {
+    width: 50%;
+    height: 100%;
+    padding: 30px;
+    background-image: url(../image/06news/fuji-moon2.png);
+    background-size: 200px;
+    background-origin: padding-box;
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
+
+article p a {
+    text-decoration-line: none;
+}
+
+article h1 {
+    font-weight: bold;
+    padding: 10px 10px 10px 30px;
+    border-bottom: solid 4px;
+    border-top: solid 4px;
+    /*    text-align: center;*/
+}
+
+/*見出しの色*/
+.strovery {
+    width: 65%;
+    color: firebrick;
+    border: firebrick;
+}
+
+.pottery {
+    width: 75%;
+    color: saddlebrown;
+    border: saddlebrown;
+}
+
+.jam {
+    width: 80%;
+    color: darkred;
+    border: darkred;
+}
+
+.sup {
+    width: 65%;
+    color: darkcyan;
+    border: darkcyan;
+}
+
+.wine {
+    width: 70%;
+    color: darkmagenta;
+    border: darkmagenta;
+}
+
+/*記事の文章*/
+.information-text {
+    margin-top: 20px;
+}
+
+
+.information {
+    margin-top: 10px;
+}
+
+.explanation {
+    padding-bottom: 30px;
+}
+
+
+
+/*news1 shop*/
+
+#shop01 {
+    width: 100%;
+    padding-top: 5px;
+    color: #fff;
+    background-color: brown;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+#shop01 table {
+    width: 70%;
+}
+
+#shop01 tr:first-child {
+    font-size: 1.2em;
+}
+
+#shop01 img {
+    width: 30%;
+    height: 30%;
+    margin: 8px 17px 12px 17px;
+}
+
+/*news02 shop*/
+
+#shop02 {
+    width: 100%;
+    padding-top: 5px;
+    color: #fff;
+    background-color: sienna;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+#shop02 table {
+    width: 70%;
+}
+
+#shop02 tr:first-child {
+    font-size: 1.2em;
+}
+
+#shop02 img {
+    width: 30%;
+    height: 30%;
+    margin: 8px 17px 12px 17px;
+}
+
+/*news03 shop*/
+
+#shop03 {
+    width: 100%;
+    padding-top: 5px;
+    color: #fff;
+    background-color: firebrick;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+#shop03 table {
+    width: 70%;
+}
+
+#shop03 tr:first-child {
+    font-size: 1.2em;
+}
+
+#shop03 img {
+    width: 30%;
+    height: 30%;
+    margin: 8px 17px 12px 17px;
+}
+
+/*news04 shop*/
+
+#shop04 {
+    width: 100%;
+    padding-top: 5px;
+    color: #fff;
+    background-color: lightseagreen;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+#shop04 table {
+    width: 70%;
+}
+
+#shop04 tr:first-child {
+    font-size: 1.2em;
+}
+
+#shop04 img {
+    width: 30%;
+    height: 30%;
+    margin: 8px 17px 12px 17px;
+}
+
+
+/*news5 shop*/
+#shop05 {
+    width: 100%;
+    padding-top: 5px;
+    color: #fff;
+    background-color: darkorchid;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+#shop05 table {
+    width: 70%;
+}
+
+#shop05 tr:first-child {
+    font-size: 1.2em;
+}
+
+#shop05 img {
+    width: 30%;
+    height: 30%;
+    margin: 8px 17px 12px 17px;
+}
+
+
+/*#####画面の横幅768ピクセル以下#####*/
+/*#####画面の横幅768ピクセル以下#####*/
+@media(max-width:768px) {
+
+    .main {
+        width: 100vw;
+        justify-self: auto;
+        height: auto;
+    }
+
+    main #orchard01 {
+        width: 100vw;
+        display: flex;
+        flex-direction: column
+    }
+
+    figure {
+        width: 85%;
+        padding-left: 6%;
+    }
+
+    article {
+        width: auto;
+        padding: 60px 30px 30px 30px;
+
+    }
+
+    /*記事の文章*/
+    .explanation {
+        padding-bottom: 15px;
+    }
+
+    /*お店の画像*/
+    #shop01 img {
+        width: 20%;
+        height: 20%;
+        margin: 8px 13px 12px 13px;
+    }
+
+    #shop01 table {
+        margin-bottom: 7px;
+    }
+
+
+    #shop02 img {
+      width: 20%;
+        height: 20%;
+        margin: 8px 13px 12px 13px;
+    }
+
+    #shop02 table {
+        margin-bottom: 7px;
+    }
+
+    #shop03 img {
+   width: 20%;
+        height: 20%;
+        margin: 8px 13px 12px 13px;
+    }
+
+    #shop03 table {
+        margin-bottom: 7px;
+    }
+
+
+
+    #shop04 img {
+      width: 20%;
+        height: 20%;
+        margin: 8px 13px 12px 13px;
+    }
+
+    #shop04 table {
+        margin-bottom: 7px;
+    }
+
+    #shop05 img {
+    width: 20%;
+        height: 20%;
+        margin: 8px 13px 12px 13px;
+    }
+
+    #shop05 table {
+        margin-bottom: 7px;
+    }
+
+}
+
+/*#####画面の横幅320以上767以下#####*/
+/*----フォントサイズの調整----*/
+
+
+@media(min-width: 320px) and (max-width: 767px) {
+    article h1 {
+        font-size: calc(0.6rem + 16 * (100vw - 320px) / (768 - 320));
+    }
+
+    article p {
+        font-size: calc(0.1rem + 16 * (100vw - 320px) / (768 - 320));
+    }
+
+    /*shop関数設定*/
+    #shop01 {
+        font-size: calc(0.1rem + 16 * (100vw - 320px) / (768 - 320));
+    }
+
+    #shop02 {
+        font-size: calc(0.1rem + 16 * (100vw - 320px) / (768 - 320));
+    }
+
+    #shop03 {
+        font-size: calc(0.1rem + 16 * (100vw - 320px) / (768 - 320));
+    }
+
+    #shop04 {
+        font-size: calc(0.1rem + 16 * (100vw - 320px) / (768 - 320));
+    }
+
+    #shop05 {
+        font-size: calc(0.1rem + 16 * (100vw - 320px) / (768 - 320));
+    }
+}

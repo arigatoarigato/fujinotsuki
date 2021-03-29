@@ -1,0 +1,377 @@
+@charset 'utf-8';
+
+/*全体にマージン＆パディング0と設定しています*/
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Sawarabi Gothic", sans-serif;
+}
+
+
+
+/*ひとまずの背景画像（和紙模様）を入れています*/
+body {
+	background-image: url(../image/01top/washi1.jpg);
+
+	/*	①header　②main　③footerのグリッド*/
+	display: grid;
+	grid-template-rows: auto auto auto;
+}
+
+
+/*	「トップへ戻る」ボタン*/
+/*12/18アイコンの位置仮置きしています*/
+#pageTop {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+}
+
+
+#pageTop i {
+	padding-top: 9px;
+}
+
+
+
+#pageTop a {
+	display: block;
+	z-index: 999;
+	border-radius: 30px;
+	width: 35px;
+	height: 35px;
+	background-color: rgba(0, 0, 0, 0.73);
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: center;
+}
+
+
+
+#pageTop a:hover {
+	text-decoration: none;
+	opacity: 0.7;
+}
+
+
+
+
+/*①header　②footerの
+各コンテンツをくるんでいるラップ*/
+.wrapper {
+	margin: 0 auto;  
+}
+
+
+
+
+
+/*
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------
+ヘッダーここから
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------
+*/
+
+
+/*ヘッダーの各コンテンツをくるんでいるラップ*/
+.header {
+
+	background-color: rgba(204, 126, 177, 0.44);
+	/*	background-color: rgba(248, 248, 248, 0.46);*/
+  z-index: 999;
+}
+
+header a{
+   color: #555;
+}
+
+
+/*スクロールしたときに、
+グローバルナビゲーションだけ
+ブラウザトップに固定しています。*/
+header.header {
+	position: sticky;
+	top: 0;
+	width: auto;
+}
+
+
+header .wrapper {
+	display: grid;
+	/*グリッド：ヘッダー*/
+	grid-row: 1;
+	display: grid;
+	grid-template-columns: 1fr 10px 35% 10px 1fr;
+	align-items: center;
+	justify-items: center;
+	max-width: 1200px;
+}
+
+
+
+/*ヘッダーのロゴ*/
+.topbar_icon {
+	grid-column: 3;
+}
+
+.topbar_icon h1 {
+	height: 100%;
+}
+
+.topbar_icon a {
+	grid-template-columns: auto;
+	display: block;
+	text-align: center;
+}
+
+.topbar_icon img {
+	height: 70%;
+	width: 70%;
+}
+
+
+
+/*ヘッダーのナビゲーションの各項目に*/
+
+.nav {
+	grid-column: 1;
+	grid-row: 1;
+}
+
+.nav ul {
+	list-style: none;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	height: 100%;
+	align-items: center;
+}
+
+
+.map {
+	grid-column: 1;
+}
+
+.spot {
+	grid-column: 2;
+}
+
+.tokusan {
+	grid-column: 3;
+}
+
+.shop {
+	grid-column: 4;
+}
+
+img {
+	width: 100%;
+	height: 100%;
+}
+
+.nav ul li a {
+	color: #000;
+	text-decoration: none;
+	font-size: 20px;
+	display: block;
+}
+
+
+
+.header_sub{
+  grid-column: 5;
+  display: grid;
+  grid-template-rows: auto 8px auto;
+  width:100%;
+}
+
+/*言語*/
+.langage{
+  grid-row: 3;
+  justify-self: end;
+  margin-bottom: 8px;
+}
+
+.langage p{
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.langage a{
+    display: inline-block;
+  max-width: 180px;
+  text-align: left;
+/*  background-color: #ffec47;*/
+   background-color:#f8b62d;
+/*  font-size: 1.1em;*/
+  color:#666;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 50px;
+      padding-right: 5px;
+    padding-left: 5px;
+  border-bottom: 3px solid #6e5115;
+ border-right: 3px solid #6e5115; 
+    text-decoration-line: none;
+}
+
+/*切り替え後の言語*/
+.langage:active {
+    transform: translateY(4px);
+    border-bottom: none;
+}
+
+.langage2 a{
+    display: inline-block;
+  max-width: 180px;
+  text-align: left;
+/*  background-color: #ffec47;*/
+   background-color:#f8b62d;
+  font-size: 1.2em;
+  color:#777;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 50px;
+      padding-right: 10px;
+    padding-left: 10px;
+  border-bottom: 4px solid #6e5115;
+ border-right: 4px solid #6e5115; 
+    text-decoration-line: none;
+}
+
+.langage2:active {
+    transform: translateY(4px);
+    border-bottom: none;
+}
+
+
+/*天気情報*/
+.weather {
+  grid-row: 1;
+   justify-self: end;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.weather img {
+	width: 100%;
+	height: 100%;
+}
+
+/*
+--------------------------------------------
+ヘッダー　ここまで
+--------------------------------------------
+*/
+
+
+
+
+
+
+/*
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------
+メインコンテンツここから
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------
+*/
+
+main {
+	grid-row: 2;
+	max-width: 1200px;
+}
+
+/*
+--------------------------------------------
+メインコンテンツここまで
+--------------------------------------------
+*/
+
+
+
+
+
+/*
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------
+フッター　ここから
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------
+*/
+
+footer .wrapper {
+	display: grid;
+	grid-template-columns: 1fr auto auto auto 1fr;
+	grid-template-rows: repeat(2, auto);
+	grid-column-gap: 60px;
+	grid-row-gap: 10px;
+	justify-items: center;
+	max-width: 1200px;
+}
+
+footer {
+	grid-row: 3;
+	background-color: rgba(204, 126, 177, 0.44);
+    padding:15px;
+  color: #555;
+}
+
+footer a{
+   color: #555;
+}
+
+/*フッターのキャッチコピー*/
+.footer_text {
+	grid-column: 2/3;
+	grid-row: 1;
+}
+
+.footer_text  h3{
+  padding-bottom:2px;
+  margin-bottom: 10px;
+  border-bottom: solid 2px;
+}
+
+/*フッターの住所情報*/
+.footer_adress {
+	grid-column: 3/4;
+	grid-row: 1;
+	word-break: keep-all;
+}
+
+.footer_adress th {
+	padding-right: 10px;
+	text-align: left;
+}
+
+.footer_adress tr {
+	margin: 20px 0;
+}
+
+/*フッターのサイトリンク*/
+.footer_site_link {
+	grid-column: 4/5;
+	grid-row: 1;
+}
+
+/*フッターのコピーライト*/
+.footer_copy {
+	grid-column: 2/5;
+	grid-row: 2;
+	text-align: center;
+}
+
+/*
+--------------------------------------------
+フッター　ここまで
+--------------------------------------------
+*/

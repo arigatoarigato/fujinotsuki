@@ -1,0 +1,196 @@
+/* site */
+main {
+  max-width: 1000px;
+  margin: 1rem auto;
+}
+main#site {
+  display: grid;
+  grid-template-rows: repeat(auto, 6);
+  grid-template-columns: 1fr 1fr;
+}
+main#site #main_header {
+  grid-row: 1;
+  grid-column: 1 / -1;
+  font-size: 3rem;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 700;
+  color: rgba(204, 126, 177);
+  text-shadow: 2px 2px 2px #FFF;
+}
+main#site h1 {
+  grid-row: 2;
+  grid-column: 1 / -1;
+}
+main#site #map {
+  grid-row: 3;
+  grid-column: 1;
+  justify-self: end;
+  text-align: end;
+}
+main#site #spot {
+  grid-row: 3;
+  grid-column: 2;
+  justify-self: start;
+  text-align: start;
+}
+main#site #tokusan {
+  grid-row: 4;
+  grid-column: 1;
+  justify-self: end;
+  text-align: end;
+}
+main#site #shop {
+  grid-row: 4;
+  grid-column: 2;
+  justify-self: start;
+  text-align: start;
+}
+main#site #other {
+  grid-row: 5;
+  grid-column: 1 / -1;
+}
+main#site #jpen {
+  grid-row: 6;
+  grid-column: 1 / -1;
+}
+main#site section {
+  text-align: center;
+}
+main#site section img {
+  width: 50%;
+}
+main#site h1 {
+  text-align: center;
+  width: 100%;
+  font-size: 2em;
+  align-self: center;
+  justify-self: center;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 500;
+  color: #3d3524;
+  background: linear-gradient(transparent 70%, rgba(204, 126, 177, 0.5) 70%);
+  margin: 1rem;
+}
+main#site h2 {
+  text-align: center;
+  width: 100%;
+  font-size: 2em;
+  align-self: center;
+  justify-self: center;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 500;
+  color: #3d3524;
+  background: linear-gradient(transparent 70%, rgba(204, 126, 177, 0.5) 70%);
+  margin: 1rem;
+}
+main#site li {
+  list-style-type: none;
+  margin: .5rem;
+}
+main#site a {
+  text-decoration: none;
+}
+/* privacy */
+main#privacy {
+  margin: 1rem auto;
+}
+main#privacy #privacy-main {
+  margin: 1rem;
+}
+main#privacy h1 {
+  margin: 1rem;
+}
+main#privacy h2 {
+  margin: .5rem;
+}
+main#privacy p {
+  text-indent: 2rem;
+}
+main#privacy ol {
+  padding-left: 4rem;
+}
+main#privacy .tR {
+  text-align: right;
+}
+/* about */ :root {
+  --Qa: rgba(71, 71, 71, 0.85);
+  --Aa: rgba(255, 235, 71, 0.50);
+  font-family: "Sawarabi Gothic", sans-serif
+}
+#about h1 {
+  text-align: center;
+  margin: 2rem;
+}
+.cp_qa *, .cp_qa *:after, .cp_qa *:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.cp_qa {
+  border-top: 1px solid #1b2538;
+}
+.cp_qa .cp_actab {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 1px;
+  color: #1b2538;
+}
+.cp_qa .cp_actab input {
+  position: absolute;
+  opacity: 0;
+}
+/* 質問 */
+.cp_qa .cp_actab label {
+  font-weight: bold;
+  line-height: 1.6;
+  position: relative;
+  display: block;
+  margin: 0 0 0 0;
+  padding: 1em 2em 1em 1em;
+  cursor: pointer;
+  border-bottom: 1px solid #1b2538;
+}
+.cp_qa .cp_actab label:hover {
+  color: var(--Qa);
+}
+/* 答え */
+.cp_qa .cp_actab .cp_actab-content {
+  overflow: hidden;
+  max-height: 0;
+  -webkit-transition: max-height 0.5s ease;
+  transition: max-height 0.5s ease;
+  color: #000;
+  background: var(--Aa);
+}
+.cp_qa .cp_actab .cp_actab-content p {
+  margin: 1em;
+}
+/* 質問を開いた時の仕様 */
+/* --アイコン */
+.cp_qa .cp_actab input:checked ~ label {
+  color: var(--Qa);
+}
+/* --答えの高さ */
+.cp_qa .cp_actab input:checked ~ .cp_actab-content {
+  max-height: 40em;
+}
+/* 質問をクリックした時のアイコンの動き */
+.cp_qa .cp_actab label::after {
+  line-height: 1.6;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  display: block;
+  width: 3em;
+  margin-top: -12.5px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  text-align: center;
+}
+.cp_qa .cp_actab input[type=checkbox] + label::after {
+  content: '\25BC';
+}
+.cp_qa .cp_actab input[type=checkbox]:checked + label::after {
+  -webkit-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+}

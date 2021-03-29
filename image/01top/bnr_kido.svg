@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+]>
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="200px" height="50px" viewBox="-2 2.32 200 50" enable-background="new -2 2.32 200 50"
+	 xml:space="preserve">
+<defs>
+</defs>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="98.5" y1="4.3203" x2="98.5" y2="50.3203">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="0.9888" style="stop-color:#39B54A"/>
+</linearGradient>
+<rect x="1" y="4.32" fill="url(#SVGID_1_)" stroke="#4D4D4D" stroke-width="2" stroke-miterlimit="10" width="195" height="46"/>
+<g>
+	<g>
+		<g>
+			<rect x="93.731" y="14.49" opacity="0.7" fill="#D4CCE5" width="3.495" height="9.41"/>
+			<rect x="66.976" y="11.264" opacity="0.7" fill="#88ABDA" width="9.68" height="9.68"/>
+			<circle opacity="0.7" fill="#ACD48F" cx="78.808" cy="20.406" r="4.841"/>
+			<polygon opacity="0.7" fill="#F6BCAE" points="77.237,16.856 74.246,11.677 77.237,6.497 83.218,6.497 86.208,11.677 
+				83.218,16.856 			"/>
+			<rect x="83.379" y="9.921" opacity="0.6" fill="#FFF598" width="15.596" height="5.915"/>
+			<circle opacity="0.7" fill="#6EC6D1" cx="91.038" cy="15.634" r="3.764"/>
+			<rect x="62.136" y="12.34" opacity="0.7" fill="#FCDAAE" width="9.68" height="3.764"/>
+		</g>
+		<g>
+			<rect x="62.582" y="22.653" opacity="0.7" fill="#D4CCE5" width="3.495" height="9.41"/>
+			<rect x="35.826" y="19.427" opacity="0.7" fill="#88ABDA" width="9.68" height="9.68"/>
+			<circle opacity="0.7" fill="#ACD48F" cx="47.658" cy="28.569" r="4.841"/>
+			<polygon opacity="0.7" fill="#F6BCAE" points="46.087,25.019 43.096,19.84 46.087,14.66 52.068,14.66 55.058,19.84 
+				52.068,25.019 			"/>
+			<rect x="52.229" y="18.084" opacity="0.6" fill="#FFF598" width="15.596" height="5.915"/>
+			<circle opacity="0.7" fill="#6EC6D1" cx="59.888" cy="23.797" r="3.764"/>
+			<rect x="30.986" y="20.503" opacity="0.7" fill="#FCDAAE" width="9.68" height="3.764"/>
+		</g>
+		<g>
+			<rect x="35.602" y="37.859" opacity="0.7" fill="#D4CCE5" width="3.495" height="9.41"/>
+			<rect x="8.846" y="34.633" opacity="0.7" fill="#88ABDA" width="9.68" height="9.68"/>
+			<circle opacity="0.7" fill="#ACD48F" cx="20.678" cy="43.775" r="4.841"/>
+			<polygon opacity="0.7" fill="#F6BCAE" points="19.107,40.225 16.116,35.046 19.107,29.866 25.088,29.866 28.078,35.046 
+				25.088,40.225 			"/>
+			<rect x="25.249" y="33.29" opacity="0.6" fill="#FFF598" width="15.596" height="5.915"/>
+			<circle opacity="0.7" fill="#6EC6D1" cx="32.908" cy="39.003" r="3.764"/>
+			<rect x="4.006" y="35.709" opacity="0.7" fill="#FCDAAE" width="9.68" height="3.764"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<g>
+			<rect x="184.975" y="23.104" opacity="0.7" fill="#D4CCE5" width="3.495" height="9.41"/>
+			<rect x="158.219" y="19.878" opacity="0.7" fill="#88ABDA" width="9.68" height="9.68"/>
+			<circle opacity="0.7" fill="#ACD48F" cx="170.051" cy="29.021" r="4.841"/>
+			<polygon opacity="0.7" fill="#F6BCAE" points="168.48,25.47 165.489,20.292 168.48,15.111 174.461,15.111 177.451,20.292 
+				174.461,25.47 			"/>
+			<rect x="174.622" y="18.535" opacity="0.6" fill="#FFF598" width="15.596" height="5.915"/>
+			<circle opacity="0.7" fill="#6EC6D1" cx="182.281" cy="24.249" r="3.764"/>
+			<rect x="153.379" y="20.954" opacity="0.7" fill="#FCDAAE" width="9.68" height="3.764"/>
+		</g>
+		<g>
+			<rect x="156.812" y="36.918" opacity="0.7" fill="#D4CCE5" width="3.495" height="9.41"/>
+			<rect x="130.056" y="33.693" opacity="0.7" fill="#88ABDA" width="9.68" height="9.68"/>
+			<circle opacity="0.7" fill="#ACD48F" cx="141.888" cy="42.835" r="4.841"/>
+			<polygon opacity="0.7" fill="#F6BCAE" points="140.317,39.285 137.326,34.106 140.317,28.925 146.298,28.925 149.288,34.106 
+				146.298,39.285 			"/>
+			<rect x="146.459" y="32.35" opacity="0.6" fill="#FFF598" width="15.596" height="5.915"/>
+			<circle opacity="0.7" fill="#6EC6D1" cx="154.118" cy="38.063" r="3.764"/>
+			<rect x="125.216" y="34.769" opacity="0.7" fill="#FCDAAE" width="9.68" height="3.764"/>
+		</g>
+	</g>
+</g>
+<rect x="45.758" y="9.44" fill="none" width="148.213" height="38.738"/>
+<text transform="matrix(1.0219 0 0 1 64.4004 27.5181)"><tspan x="0" y="0" font-family="'HGGyoshotai'" font-size="21.0365">木野戸造園</tspan><tspan x="16.224" y="16.78" font-family="'HGGyoshotai'" font-size="18.4711">株式会社</tspan></text>
+<rect x="2.063" y="4.78" fill="none" width="49.48" height="44.681"/>
+<text transform="matrix(1.0219 0 0 1 2.0635 18.4487)"><tspan x="0" y="0" fill="#0000FF" font-family="'HGGyoshotai'" font-size="15.9057">草</tspan><tspan x="0" y="14.366" fill="#0000FF" font-family="'HGGyoshotai'" font-size="15.9057">　花</tspan><tspan x="0" y="28.733" fill="#0000FF" font-family="'HGGyoshotai'" font-size="15.9057">　　苗</tspan></text>
+</svg>
